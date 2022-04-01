@@ -1,75 +1,64 @@
-var tarefa = [];
-function adicionarTarefa(){
-//entrada de dados
-var entradaTarefa = document.getElementById("entradaTarefa");
-var saidaTarefa = document.getElementById("saidaTarefa");
-
-var nome = entradaTarefa.value; //nome da tarefa
-
-if (nome == "") {
-    alert("Informe a Tarefa");
-    return;
-    }
-tarefa.push(nome);
-
-var lista = "";
-
-for (i=0; i< tarefa.length; i++) {
-    lista += tarefa[i];
-
-}
-console.log(saidaTarefa);
-saidaTarefa.textContent;
-}
-
-var noBotao = document.getElementById("noBotao");
-noBotao.addEventListener("click", adicionarTarefa);
-
-console.log();
-console.log(saidaTarefa);
-console.log(entradaTarefa)
-
-
-/* 
-function novaTarefa(){
-    let tarefa=["Estudar Algoritmo", " Estudar JavaScript", "Entregar desafio JavaScript"];
-    var li = document.createElement("li");
-    var entradaTarefa = document.getElementById("entradaTarefa").value;
-    var t = document.createTextNode(entradaTarefa);
-    
-    li.appendChild(t);
-
-    if (entradaTarefa == "") {
-        alert("Digite uma Tarefa!");
-      } else {
-        document.getElementById("todo-list").appendChild(li);
-      }
-      document.getElementById("todo-input").value = "";
-
-      tarefa.push(todo_item)
-      console.log(tarefa)
-}
-
-///////////////////////////////////////////////////////////
-let tarefa=["Estudar Algoritmo", " Estudar JavaScript", "Entregar desafio JavaScript"];
+const btnAdditem = document.querySelector('.todo-button');
 let todo_item = document.getElementById("todo_item");
- 
-var formulario = document.querySelector("#form");
-var tabela = document.querySelector(".todo_item");
+let item = document.querySelector('.todo-input'); 
 
-formulario.addEventListener("submit", function(evento){
+let item_lista= [] // vetor da lista 
+let container_lista = document.querySelector('#itens_lista');
+let select = document.querySelector('.filter-todo');
 
-evento.preventDefault();
+btnAdditem.addEventListener('click',()=>{
 
-    let todo_item = add.querySelector("#form");
-
-    if (todo_item == ""){
-        alert (" Digite a tarefa no campo.");
+    let item_id = {
+        id:item_id.length + 1,
+        item:item.value,
+        completed:false
     }
+    
+    if (item.value == ''){ // valida se o input esta vazio
+        alert("Campo vazio. É necessario preencher uma tarefa")
+    }
+        
+        else { // caso o input esteja preenchido, faça o seguinte:
+            
+           item_id.push(item_id); // captura o texto digitado e coloca a informacao no vetor
+
+            let div = document.createElement('div');
+            div.classList.add('todo')
+            div.id = 'div'+item_lista.length
+            
+            let li = document.createElement('li');
+            li.classList.add('todo-item') 
+            li.id = 'li'+item_lista.length 
+            li.innerHTML = item_id.task
+    
+            let btn1 = document.createElement('button');
+            btn1.classList.add('check-btn');
+            btn1.id = item_lista.length 
+            btn1.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>'
+            
+            let btn2 = document.createElement('button');
+            btn2.classList.add('trash-btn')
+            btn2.id = item_lista.length 
+            btn2.innerHTML = '<i class="fas fa-trash" aria-hidden="true"></i>'
+        }
+        
+        
+       item.value = ""
+
+/*formulario.addEventListener("submit", function(evento){
+
+    evento.preventDefault();
+
+    let todo_item = document.querySelector(".todo-input").value;
+
+    tarefa.push(todo_item);
+
+    adicionarTarefa(todo_item)
+    
+    console.log(todo_item); // ou console.log(tarefa); a fim de listar todas tarefas existentes
+    
 });
-    tarefa.push(todo_item)
-     console.log(tarefa)
+    
+    
 
-let conteudo_da_lista = document.getElementById("Digite a Tarefa");
-
-*/
+let conteudo_da_lista = document.getElementById("Digite a Tarefa") /*/

@@ -19,7 +19,7 @@
             <h1>FULLTURE Todo List</h1>
         </header>
 
-        <form>
+        <form id="form">
             <input type="text" class="todo-input" maxlength="40" />
             <button class="todo-button" type="submit">
                 <i class="fas fa-plus-square"></i>
@@ -34,23 +34,9 @@
         </form>
 
         <div class="todo-container">
-            <ul class="todo-list">
-                <div class="todo">
-                    <li class="todo_item">Estudar Algoritmo</li>
-                    <button class="check-btn"><i class="fas fa-check" aria-hidden="true"></i></button>
-                    <button class="trash-btn"><i class="fas fa-trash" aria-hidden="true"></i></button>
-                </div>
-                <div class="todo">
-                    <li class="todo_item">Estudar JavaScript</li>
-                    <button class="check-btn"><i class="fas fa-check" aria-hidden="true"></i></button>
-                    <button class="trash-btn"><i class="fas fa-trash" aria-hidden="true"></i></button>
-                </div>
-                <div class="todo">
-                    <li class="todo_item">Entregar desafio JavaScript</li>
-                    <button class="check-btn"><i class="fas fa-check" aria-hidden="true"></i></button>
-                    <button class="trash-btn"><i class="fas fa-trash" aria-hidden="true"></i></button>
-                </div>
-            </ul>
+            <ul class="todo-list" id="itens_lista">
+                
+         </ul>
         </div>
         <script src="JS.js"></script>
     </body>
